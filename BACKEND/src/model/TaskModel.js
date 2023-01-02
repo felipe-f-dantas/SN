@@ -1,6 +1,8 @@
+//Import das credencias do Atlas
+
 const mongoose = require('../config/database');
 const Schema = mongoose.Schema;
-
+//Definicao do Modelo de Dados da Tarefa 
 const TaskSchema = new Schema({
         macaddress: {type: String, required: true},
         type:{type: Number, required: true},
