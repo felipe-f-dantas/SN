@@ -1,5 +1,4 @@
 //Import das credencias do Atlas
-
 const mongoose = require('../config/database');
 const Schema = mongoose.Schema;
 //Definicao do Modelo de Dados da Tarefa 
