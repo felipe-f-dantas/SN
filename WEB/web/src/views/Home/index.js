@@ -1,10 +1,29 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 import * as Style from './styles';
+import api from '../../services/api'
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import FilterCard from "../../Components/FilterCard";
+import TaskCard from "../../Components/TaskCard";
+
+
 function Home() {
-  const[filterActived, setFilterActived] = useState();
+  const[filterActived, setFilterActived] = useState('all');
+  const[tasks, setTasks] = useState([]);
+
+  async function loadTasks(){
+        await api.get(`/task/filter/${filterActived}/11:11:11:11:11:11`)
+        .then(response => {
+          setTasks(response.data)
+          console.log(response.data)
+        })
+  }
+    useEffect(()=>{
+      loadTasks();
+    },[filterActived])
+
+
+
   return  (
     <Style.Container>
         <Header/>
@@ -25,8 +44,23 @@ function Home() {
               <FilterCard title="ANO"   actived={filterActived ==='year'}/>
           </button>
         </Style.FilterArea>
+        
+        <Style.Title>
+          <h3>TAREFAS</h3>
+        </Style.Title>
+
+        <Style.Content>
+          {
+            tasks.map(tarefas =>(
+            <TaskCard />
+            ))
+          }
+        </Style.Content>
         <Footer/>
     </Style.Container>
+       
+
+
   )
 }
 

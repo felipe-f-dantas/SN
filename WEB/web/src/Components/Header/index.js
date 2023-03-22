@@ -10,9 +10,9 @@ function Header() {
             <img src={logo} alt="logo"/>
         </Style.Leftside>
         <Style.Rightside>
-            <a href="#">Inicio</a>
-            <a href="#">Nova Tarefa</a>
-            <a href="#">Sincronizar Celular</a>
+            <a href="#">INICIO</a>
+            <a href="#">NOVA TAREFA</a>
+            <a href="#">SINCRONIZAR CELULAR</a>
             <a href="#" id="notification"><img src={bell} alt="notificacao"/><span>5</span></a>
         </Style.Rightside>
     </Style.Container>
