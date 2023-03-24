@@ -52,7 +52,7 @@ function Home() {
         <Style.Content>
           {
             tasks.map(tarefas =>(
-            <TaskCard />
+            <TaskCard type={tarefas.type} title={tarefas.title} when={tarefas.when}/>
             ))
           }
         </Style.Content>
