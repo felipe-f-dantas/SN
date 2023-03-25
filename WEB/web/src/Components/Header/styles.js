@@ -24,7 +24,14 @@ height:70px;
 display:flex;
 align-items:center;
 justify-content:flex-end;
-a{
+
+button{
+    background:none;
+    border:none;  
+    cursor:pointer;  
+}
+
+a,button{
     color:#fff;
     font-weight:bold;
     text-decoration:none;
