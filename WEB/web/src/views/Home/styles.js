@@ -19,6 +19,11 @@ export const FilterArea = styled.div`
         display: flex;
         flex-wrap: wrap;
         justify-content:center;
+
+        a{
+            text-decoration: none;
+            
+        }
     `
     export const Title = styled.div`
         width: 100%;

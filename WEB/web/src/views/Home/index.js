@@ -5,7 +5,7 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import FilterCard from "../../Components/FilterCard";
 import TaskCard from "../../Components/TaskCard";
-
+import { Link } from "react-router-dom";
 
 function Home() {
   const[filterActived, setFilterActived] = useState('all');
@@ -58,13 +58,15 @@ async function lateVerify(){
         </Style.FilterArea>
         
         <Style.Title>
-          <h3>{filterActived == 'late' ? 'TAREFAS ATRASADAS' : 'TAREFAS'}</h3>
+          <h3>{filterActived === 'late' ? 'TAREFAS ATRASADAS' : 'TAREFAS'}</h3>
         </Style.Title>
 
         <Style.Content>
           {
             tasks.map(tarefas =>(
+              <Link to={`/task/${tarefas._id}`}>
             <TaskCard type={tarefas.type} title={tarefas.title} when={tarefas.when}/>
+              </Link>
             ))
           }
         </Style.Content>

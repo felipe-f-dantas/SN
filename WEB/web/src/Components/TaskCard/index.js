@@ -5,7 +5,7 @@ import iconDefault from '../../assets/Vector-7.png'
 import typeIcons from '../../utils/typeIcons';
 
 function TaskCard({type, title, when}) {
-    const date = useMemo (()=> format (new Date(when),'dd/mm/yyyy'));
+    const date = useMemo (()=> format (new Date(when),'dd/MM/yyyy'));
     const hour = useMemo (()=> format (new Date(when),'HH:mm'));
 
     return(
