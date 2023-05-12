@@ -5,15 +5,20 @@ import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import FilterCard from "../../Components/FilterCard";
 import TaskCard from "../../Components/TaskCard";
-import { Link } from "react-router-dom";
+import { Link, Redirect} from "react-router-dom";
+import isConected from "../../utils/isConected";
+
+
+
+
 
 function Home() {
   const[filterActived, setFilterActived] = useState('all');
   const[tasks, setTasks] = useState([]);
-  const [lateCount, setLateCount] = useState();
+  const [redirect, setRedirect] = useState(false);
 
   async function loadTasks(){
-        await api.get(`/task/filter/${filterActived}/11:11:11:11:11:11`)
+        await api.get(`/task/filter/${filterActived}/${isConected}`)
         .then(response => {
           setTasks(response.data)
         })
@@ -25,20 +30,18 @@ function Home() {
   }
     useEffect(()=>{
       loadTasks();
-      lateVerify();
-    },[filterActived])
+      if(!isConected){
+        setRedirect(true);
+      }
+       },[filterActived, loadTasks])
 
 
-async function lateVerify(){
-  await api.get(`/task/filter/late/11:11:11:11:11:11`)
-  .then(response => {
-    setLateCount(response.data.length)
-  })
-}
+
 
   return  (
     <Style.Container>
-        <Header lateCount={lateCount} clickNotification={Notification}/>
+        { redirect && <Redirect to ="/qrcode"/>}
+        <Header clickNotification={Notification}/>
         <Style.FilterArea>
           <button type="button"  onClick={()=>setFilterActived("all")}>
               <FilterCard title="TODOS" actived={filterActived ==='all'}/>
@@ -65,7 +68,7 @@ async function lateVerify(){
           {
             tasks.map(tarefas =>(
               <Link to={`/task/${tarefas._id}`}>
-            <TaskCard type={tarefas.type} title={tarefas.title} when={tarefas.when}/>
+            <TaskCard type={tarefas.type} title={tarefas.title} when={tarefas.when} done={tarefas.done}/>
               </Link>
             ))
           }

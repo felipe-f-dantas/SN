@@ -12,6 +12,9 @@ align-items:center;
 justify-content:center;
 flex-direction:column;
 cursor:pointer;
+opacity: ${props => props.done ? 0.5 : 1};
+
+
 
 &:hover {
     opacity:0.5;

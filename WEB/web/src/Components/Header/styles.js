@@ -28,7 +28,8 @@ justify-content:flex-end;
 button{
     background:none;
     border:none;  
-    cursor:pointer;  
+    cursor:pointer;
+    font-size:16px;  
 }
 
 a,button{
@@ -60,5 +61,7 @@ a,button{
     }
 
     }
+
+  
 }
 `
