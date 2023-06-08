@@ -3,17 +3,17 @@ import {View, Text, TouchableOpacity,Image} from 'react-native';
 import styles from './styles';
 import {format} from 'date-fns';
 
-import iconDefault from '../../assets/default.png'
+//Icones
+import typeIcons from '../../utils/typeIcons';
 
-
-export default function TaskCard({done, title, when}){
+export default function TaskCard({done, title, when, type}){
 
     const [filter, setFilter] = useState('today')
 
     return(
         <TouchableOpacity style={[styles.card, done && styles.done]}>
             <View style={styles.cardLeft}>
-                <Image source={iconDefault} style={styles.typeActived}/>
+                <Image source={typeIcons[type]} style={styles.typeActived}/>
                 <Text style={styles.cardTitle}>{title}</Text>
             </View>
 
