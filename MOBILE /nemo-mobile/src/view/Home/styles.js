@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
             width: '100%',
             height: 70,
             justifyContent: 'space-around',
-            alignItems: 'center'
+            alignItems: 'center',
         },
         filterTextActived:{
             fontWeight: 'bold',
@@ -25,7 +25,29 @@ const styles = StyleSheet.create({
             fontSize: 16,
             color: '#250C77',
             opacity: 0.5
-        }
+        },
+        title:{
+            width:'100%',
+            borderBottomWidth:1,
+            borderColor: '#250C77',
+            alignItems: 'center',
+
+        },
+        titleText:{
+            color: '#250C77',
+            fontSize: 15,
+            fontWeight: 'bold',
+            position: 'relative',
+            top:10,
+            backgroundColor: '#fff',
+            paddingHorizontal:10
+        },
+        content:{
+            width: '100%',
+            marginTop:7,
+    
+    
+        },
 });
 
 

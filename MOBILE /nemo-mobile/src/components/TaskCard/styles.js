@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         padding: 10,
         width: '90%',
-        marginVertical: 7,
-        height: 80,
+        marginVertical: 5,
+        height: 70,
         shadowColor:'#000',
         
         shadowOffset:{
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     cardTitle:{
         marginLeft: 10,
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: 15
     },
     cardRight:{
         alignItems:'flex-end',
@@ -40,18 +40,16 @@ const styles = StyleSheet.create({
     cardDate:{
         color: '#EB6800',
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: 15
     },
     cardHour:{
         color: '#250C77',
         fontWeight: 'bold',
 
     },
-    content:{
-        width: '100%',
-        marginTop:7,
-
-
+   
+    done:{
+        opacity: 0.5
     }
 });
 

@@ -15,16 +15,19 @@ const styles = StyleSheet.create({
 
   button:{
     position: 'relative',
-    top:-65
+    top:-22
   },
   image:{
     width:60,
-    height:60
+    height:60,
+    backgroundColor: '#fff',
+    borderRadius: 30
+
   },
   text:{
     position: 'relative',
     fontSize:12,
-    top: -30,
+    top: -22,
     color: '#fff',
     fontWeight: 'bold'
   }
