@@ -28,5 +28,7 @@ h1{
             color: #250C77;
             font-size: 90px;
 }
-
+img:hover{
+    opacity: 0.5;
+}
 `

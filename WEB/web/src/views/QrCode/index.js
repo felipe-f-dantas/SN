@@ -31,7 +31,7 @@ function QrCode() {
                     <p>SUAS ATIVIDADES SERAO SINCRONIZADAS COM SEU CELULAR</p>
                     <Style.QrCodeArea>
                     </Style.QrCodeArea>
-                        <Qr value="getmacaddress" size={350}></Qr>
+                        <Qr value="getmacaddress" size={200}></Qr>
                     <Style.ValidationCode>
                         <span>Digite a numeracao que esta aparecendo no seu celular</span>
                         <input type="text" onChange={e => setMac(e.target.value)} value={mac}/>
