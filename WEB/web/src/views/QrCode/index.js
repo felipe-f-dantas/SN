@@ -24,7 +24,7 @@ function QrCode() {
 
         return(
             <Style.Container>
-                { redirect && <Redirect to="/"/> }
+                { redirect && <Redirect to="/home"/> }
                 <Header/>
                 <Style.Content>
                     <h1>ESCANEI O QRCODE PELO APP</h1>

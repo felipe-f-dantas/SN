@@ -35,7 +35,7 @@ function Header({clickNotification}) {
             <img src={logo} alt="logo"/>
         </Style.Leftside>
         <Style.Rightside>
-            <Link to="/">INICIO</Link>
+            <Link to="/home">INICIO</Link>
             <Link to="/task">NOVA TAREFA</Link>
             { !isConected ?
             <Link to="/qrcode">SINCRONIZAR CELULAR</Link> 

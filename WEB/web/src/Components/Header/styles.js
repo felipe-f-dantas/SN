@@ -15,6 +15,7 @@ height:70px;
 img{
     width:130px;
     height:50px;
+    padding:10px;
 
 }
 `
